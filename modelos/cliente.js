@@ -1,20 +1,30 @@
 var Sequelize = require('sequelize');
 
-/*
-function setClient(){
-    connection.define('cliente',{
-    usuario: Sequelize.STRING, 
-    senha : Sequelize.STRING,
-    email: Sequelize.STRING
-  });
-}
-*/
+class cliente extends Sequelize.Model{}
 
-var clienteM = {
-  usuario: Sequelize.STRING ,
-  senha: Sequelize.STRING,
-  email: Sequelize.STRING
-}
+cliente.init({
+  CodCli: {type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
+  Nome: Sequelize.STRING,
+  CNPJ: Sequelize.STRING,
+  Desc: Sequelize.STRING,
+  Metas: Sequelize.INTEGER,
+  Gastos: Sequelize.INTEGER,
+
+
+  static cadastro(nome, cnpj, desc, metas, gastos){
+    this.Nome = nome;
+    this.CNPJ = cnpj;
+    this.Desc = desc;
+    this.Metas = metas;
+    this.Gastos = gastos;
+    this.save().then(function(){
+      console.log('funcionou');
+    });
+  },
+  static metaAtingida(Continue){
+    
+  }
+}),
 
 /*
 function setClient(){
@@ -35,4 +45,4 @@ function setClient(){
 }
 */
 
-module.exports = clienteM;
+module.exports = cliente;
