@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="/javascripts/jquery-3.4.1.min.js"></script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  <link rel="stylesheet" href="/stylesheets/coisas.css">
+  <!--<script src="eventos.js"></script>-->
+  <script src="/javascripts/login.js"></script>
+  <title>start</title>
+</head>
+
+<body>
+  <form class="form-signin">
+    <h3>Faça o seu acesso</h3>
+    <div id="accSuccess" class="alert alert-success" role="alert">
+      Conta criada com sucesso.
+    </div>
+    <div id="mensagem" class="alert alert-danger" role="alert">
+      Usuario e senha invalidos.
+    </div>
+    
+    <label for="inputUser" class="sr-only">Informe o Usuario</label>
+    <input type="text" id="inputUser" class="form-control" placeholder="Usuario" autofocus>
+    <label for="inputPassword" class="sr-only">Informe sua Senha</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Senha">
+    <a href="MainScreen.html" data-toggle="modal" data-target="#forgotPass" >Esqueci minha senha.</a>
+    <br>
+    <button type="submit" class="btn btn-lg btn-primary btn-block" id="access">Acessar</button>
+    <button type="button" class="btn btn-lg btn-secondary btn-block" id="novoUsu" data-toggle="modal" 
+    data-target="#newUser">Novo Usuario</button>
+  </form><!--
+ Code injected by live-server 
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>--></body>
+</html>
+
+<!-- Modal -->
+<div class="modal fade" id="newUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Faça seu cadastro</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <label>Informe o Usuario:</label>
+          <br>
+          <div id="userExist" class="alert alert-danger" role="alert">
+            Usuario já existente.
+          </div>
+          <input type="text" id="createUser" placeholder="Usuario">
+          <br>
+          <label>Informe sua Senha:</label>
+          <br>
+          <input type="password" id="createPassword" placeholder="Senha">
+          <br>
+          <div id="mensagemCreate" class="alert alert-danger" role="alert">
+            Senhas não compativeis
+          </div>
+          <label>Confirme sua Senha:</label>
+          <br>
+          <input type="password" id="confirmPassword" placeholder="Senha">
+          <br>
+          <label>Digite seu Email:</label>
+          <br>
+          <input type="email" name="email" id="email" placeholder="Email">
+          <br>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-primary" id="createAcc">Criar Conta</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="forgotPass" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Informe o usuario:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <label>Nome de Usuario:</label>
+          <br>
+          <input type="text" id="usu" placeholder="usuario">
+          <br>
+          <label>Informe a nova senha:</label>
+          <br>
+          <div id="mensagemCreate2" class="alert alert-danger" role="alert">
+            Senhas não compativeis
+          </div>
+          <input type="password" id="createPass" placeholder="Senha">
+          <br>
+          <label>Confirme a nova senha:</label>
+          <br>
+          <input type="password" id="confirmPass" placeholder="Confirmar Senha">
+          <br>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal"
+          >Atualizar Conta</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--
+<div class="modal fade" id="attConta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Reset de password</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <label>Informe a nova senha:</label>
+          <br>
+          <input type="password" id="createPass" placeholder="Senha">
+          <br>
+          <label>Confirme a nova senha:</label>
+          <br>
+          <input type="password" id="confirmPass" placeholder="Confirmar Senha">
+          <br>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal"
+          >Atualizar Conta</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+-->
+
+<!--
+!-- Modal --
+<div class="modal fade" id="accessCode" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Reset de password</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <label>Informe o codigo de acesso:</label>
+          <br>
+          <input type="password" id="createPassword" placeholder="Codigo de acesso">
+          <br>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal"
+          data-target="#attConta">Avançar</button>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+<!-- Modal -->
