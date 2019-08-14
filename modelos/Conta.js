@@ -1,12 +1,10 @@
 var Sequelize = require('sequelize');
-var cliente = require('./cliente');
 
 
 var Conta = {
     CodCont: {type: Sequelize.INTEGER , primaryKey: true, autoIncrement: true },
     Nome: Sequelize.STRING,
-    ContaAPagar: Sequelize.INTEGER,
-    CodCli: Sequelize.INTEGER
+    ContaAPagar: Sequelize.INTEGER
 
 }
 cliente.hasMany(Conta);

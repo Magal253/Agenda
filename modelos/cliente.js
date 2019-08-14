@@ -1,30 +1,39 @@
 var Sequelize = require('sequelize');
 
-class cliente extends Sequelize.Model{}
+
 
 cliente.init({
   CodCli: {type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
   Nome: Sequelize.STRING,
-  CNPJ: Sequelize.STRING,
+  InfoID: Sequelize.STRING,
   Desc: Sequelize.STRING,
   Metas: Sequelize.INTEGER,
   Gastos: Sequelize.INTEGER,
+  DataNasc: Sequelize.DATEONLY,
+  Email: Sequelize.STRING,
+  LinhaGes: Sequelize.INTEGER,
+  RazSoc: Sequelize.STRING
 
+  
+}),
 
-  static cadastro(nome, cnpj, desc, metas, gastos){
+class cliente extends Sequelize.Model{
+  static cadastro(nome, infoid, desc, metas, gastos, data, email, linhagestao, razsoc){
     this.Nome = nome;
-    this.CNPJ = cnpj;
+    this.InfoID = infoid;
     this.Desc = desc;
     this.Metas = metas;
     this.Gastos = gastos;
+    this.DataNasc = data;
+    this.Email = email;
+    this.LinhaGes = linhagestao;
+    this.RazSoc = razsoc;
     this.save().then(function(){
-      console.log('funcionou');
+      console.log('funcionou Cliente.js');
     });
-  },
-  static metaAtingida(Continue){
-    
-  }
-}),
+  };
+}
+
 
 /*
 function setClient(){
