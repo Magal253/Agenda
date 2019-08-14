@@ -1,22 +1,5 @@
 var Sequelize = require('sequelize');
 
-
-
-cliente.init({
-  CodCli: {type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
-  Nome: Sequelize.STRING,
-  InfoID: Sequelize.STRING,
-  Desc: Sequelize.STRING,
-  Metas: Sequelize.INTEGER,
-  Gastos: Sequelize.INTEGER,
-  DataNasc: Sequelize.DATEONLY,
-  Email: Sequelize.STRING,
-  LinhaGes: Sequelize.INTEGER,
-  RazSoc: Sequelize.STRING
-
-  
-}),
-
 class cliente extends Sequelize.Model{
   static cadastro(nome, infoid, desc, metas, gastos, data, email, linhagestao, razsoc){
     this.Nome = nome;
@@ -32,9 +15,23 @@ class cliente extends Sequelize.Model{
       console.log('funcionou Cliente.js');
     });
   };
+  
 }
 
+cliente.init({
+  CodCli: {type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
+  Nome: Sequelize.STRING,
+  InfoID: Sequelize.STRING,
+  Desc: Sequelize.STRING,
+  Metas: Sequelize.INTEGER,
+  Gastos: Sequelize.INTEGER,
+  DataNasc: Sequelize.DATEONLY,
+  Email: Sequelize.STRING,
+  LinhaGes: Sequelize.INTEGER,
+  RazSoc: Sequelize.STRING
 
+  
+}),
 /*
 function setClient(){
     connection.define('cliente',{
