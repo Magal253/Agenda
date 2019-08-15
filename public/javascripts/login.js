@@ -39,13 +39,13 @@ $(document).ready(function(){
             var newAcc = {
                 Nome: $("#createNome").val(), 
                 InfoId: $("#createInfoId").val(), 
-                Desc: $("#create").val(),
-                Metas: $("#create").val(),
-                Gastos: $("#create").val(),
-                DataNasc: $("#create").val(),
-                Email: $("#create").val(),
-                LinhaGes: $("#create").val(),
-                RazSoc: $("#create").val()
+                Desc: $("#createDesc").val(),
+                Metas: $("#createMetas").val(),
+                Gastos: $("#createGastos").val(),
+                DataNasc: $("#createDataNasc").val(),
+                Email: $("#createEmail").val(),
+                LinhaGes: $("#createLinhaGes").val(),
+                RazSoc: $("#createRazSoc").val()
             };
             $.post("http://localhost:3000/users", newAcc)  //enviar o post para o Localhost porta 3000 e disso enviar para o users
                 .done(function(data) {
