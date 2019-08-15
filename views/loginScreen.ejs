@@ -33,9 +33,13 @@
     <input type="password" id="inputPassword" class="form-control" placeholder="Senha">
     <a href="MainScreen.html" data-toggle="modal" data-target="#forgotPass" >Esqueci minha senha.</a>
     <br>
+    <!--
     <button type="submit" class="btn btn-lg btn-primary btn-block" id="access">Acessar</button>
+    -->
     <button type="button" class="btn btn-lg btn-secondary btn-block" id="novoUsu" data-toggle="modal" 
     data-target="#newClient">Novo Usuario</button>
+    <button type="button" class="btn btn-lg btn-secondary btn-block" id="setContas" data-toggle="modal" 
+    data-target="#contas">Nova Conta</button>
   </form><!--
  Code injected by live-server 
 <script type="text/javascript">
@@ -79,6 +83,64 @@
 
 
 <div class="modal fade" id="newClient" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Faça seu cadastro</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <label>Informe o Nome do Cliente:</label>
+          <br>
+          <input type="text" id="createNome" placeholder="Usuario">
+          <br>
+          <label>Informe sua informe o CNPJ ou CPF:</label>
+          <br>
+          <input type="text" id="createInfoId" placeholder="Senha">
+          <br>
+          <label>Informeos algo extra :</label>
+          <br>
+          <input type="text" id="createDesc" placeholder="Descrição">
+          <br>
+          <label>Digite o quanto foi combinado de Meta:</label>
+          <br>
+          <input type="text" id="createMetas" placeholder="Metas">
+          <br>
+          <label>Digite o Gasto Total do Cliente:</label>
+          <br>
+          <input type="text" id="createGastos" placeholder="valor">
+          <br>
+          <label>Digite a data de Nascimento do Cliente:</label>
+          <br>
+          <input type="text" id="createData" placeholder="YYYY-MM-DD">
+          <br>
+          <label>Digite o email do Cliente:</label>
+          <br>
+          <input type="text" id="createEmail" placeholder="Email">
+          <br>
+          <label>Digite a Linha Gestora do Cliente:</label>
+          <br>
+          <input type="text" id="createLinhaGes" placeholder="Linha Gestora">
+          <br>
+          <label>Digite a Razão Social do Cliente:</label>
+          <br>
+          <input type="text" id="createRazSoc" placeholder="Razão Social">
+          <br>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-primary" id="createAcc">Criar Conta</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="contas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

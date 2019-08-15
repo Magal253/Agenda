@@ -76,6 +76,17 @@ it('nome esta vazio?', function(){
     client.LinhaGes =35320000;
     client.RazSoc   ='magal123';
 
-    expect((client.Nome=='magal')).toBe(true);
+    expect((client.InfoID!='')).toBe(true);
 
 })
+
+
+
+
+
+
+
+
+
+
+

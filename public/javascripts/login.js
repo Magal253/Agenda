@@ -52,7 +52,7 @@ $(document).ready(function(){
                     /*if(data == 'X'){
                         $("#userExist").show();
                     }else{*/
-                    $('#newUser').modal('hide');
+                    $('#newClient').modal('hide');
                     $("#accSuccess").show();
                     //console.log(newAcc);
                     //}
