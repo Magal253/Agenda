@@ -41,7 +41,7 @@ router.post('/', function(req, res, next) {
     RazSoc: clienteM.RazSoc
   });
 
-  console.log('Usuario: '+ req.body.Nome +'\nID: '+ req.body.InfoId +'\nEmail: '+ req.body.Email+'\n Data MALDITA: '+ req.body.DataNasc +'/');
+  console.log('Usuario: '+ req.body.Nome +'\nID: '+ req.body.InfoId +'\nEmail: '+ req.body.Email+'\nData MALDITA: '+ req.body.DataNasc +'/');
   connection1.sync().then(function(){
     clienteDoProj.create({
     Nome: req.body.Nome,

@@ -1,58 +1,81 @@
-var client = require('../../modelos/cliente');
-var Sequelize = require('sequelize');
 
+
+var Sequelize = require('sequelize');
+/*
 var connection1 = new Sequelize('user', 'root', 'masterkey',{
     host:'localhost',
     dialect: 'mysql'
-    });;
+    });
+*/
 
 it('nome esta vazio?', function(){
+    var cliente = require('../../modelos/cliente');
+    let client ={
+        Nome     :cliente.Nome,
+        InfoID   :cliente.InfoID,
+        Desc     :cliente.Desc,
+        Metas    :cliente.Metas,
+        Gastos   :cliente.Gastos,
+        DataNasc :cliente.DataNasc,
+        Email    :cliente.Email,
+        LinhaGes :cliente.LinhaGes,
+        RazSoc   :cliente.RazSoc
+    } 
+    client.Nome     ='magal';
+    client.InfoID   ='alguma info';
+    client.Desc     ='nenhuma';
+    client.Metas    =10000000;
+    client.Gastos   =123456;
+    client.DataNasc ='2019/08/23';
+    client.Email    ='oi@algum.coin';
+    client.LinhaGes =35320000;
+    client.RazSoc   ='magal123';
 
-  var cliente = connection1.define('cliente', {
-    DataNasc =client.DataNasc,
-    Desc     =client.Desc,
-    Email    =client.Email,
-    Gastos   =client.Gastos,
-    InfoID   =client.InfoID,
-    LinhaGes =client.LinhaGes,
-    Metas    =client.Metas,
-    Nome     =client.Nome,
-    RazSoc   =client.RazSoc      
+    expect((client.Nome=='')).toBe(false);
 
+})
+
+/*roger that
+it('nome esta vazio?', function(){
+
+var client= cliente.build({
+    DataNasc :'2019/08/23',
+    Desc     :'nenhuma',
+    Email    :'oi@algum.coin',
+    Gastos   :123456,
+    InfoID   :'alguma info',
+    LinhaGes :35320000,
+    Metas    :10000000,
+    Nome     :'magal',
+    RazSoc   :'magal123'
+})
+expect((client.nome=='')).toBe(true);
 });
-    cliente.DataNasc ='2019/08/23';
-    cliente.Desc     ='nenhuma';
-    cliente.Email    ='oi@algum.coin';
-    cliente.Gastos   =123456;
-    cliente.InfoID   ='alguma info';
-    cliente.LinhaGes =35320000;
-    cliente.Metas    =10000000;
-    cliente.Nome     ='magal';
-    cliente.RazSoc   ='magal123';
-}).expect(cliente.nome).toBe('');
+*/
 
+it('nome esta vazio?', function(){
+    var cliente = require('../../modelos/cliente');
+    let client ={
+        Nome     :cliente.Nome,
+        InfoID   :cliente.InfoID,
+        Desc     :cliente.Desc,
+        Metas    :cliente.Metas,
+        Gastos   :cliente.Gastos,
+        DataNasc :cliente.DataNasc,
+        Email    :cliente.Email,
+        LinhaGes :cliente.LinhaGes,
+        RazSoc   :cliente.RazSoc
+    } 
+    client.Nome     ='magal';
+    client.InfoID   ='alguma info';
+    client.Desc     ='nenhuma';
+    client.Metas    =10000000;
+    client.Gastos   =123456;
+    client.DataNasc ='2019/08/23';
+    client.Email    ='oi@algum.coin';
+    client.LinhaGes =35320000;
+    client.RazSoc   ='magal123';
 
-it('o nome é magal?', function(){
- 
-    var cliente = connection1.define('cliente', {
-        DataNasc =client.DataNasc,
-        Desc     =client.Desc,
-        Email    =client.Email,
-        Gastos   =client.Gastos,
-        InfoID   =client.InfoID,
-        LinhaGes =client.LinhaGes,
-        Metas    =client.Metas,
-        Nome     =client.Nome,
-        RazSoc   =client.RazSoc      
-    
-    });
-        cliente.DataNasc ='2019/08/23';
-        cliente.Desc     ='nenhuma';
-        cliente.Email    ='oi@algum.coin';
-        cliente.Gastos   =123456;
-        cliente.InfoID   ='alguma info';
-        cliente.LinhaGes =35320000;
-        cliente.Metas    =10000000;
-        cliente.Nome     ='magal';
-        cliente.RazSoc   ='magal123';
-}).expect(client.nome).toBe('magal');
+    expect((client.Nome=='magal')).toBe(true);
+
+})

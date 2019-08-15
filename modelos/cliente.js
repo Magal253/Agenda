@@ -18,6 +18,7 @@ class cliente extends Sequelize.Model{
   
 }
 */
+
 var cliente = {
   CodCli: {type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
   Nome: Sequelize.STRING,
@@ -29,9 +30,11 @@ var cliente = {
   Email: Sequelize.STRING,
   LinhaGes: Sequelize.INTEGER,
   RazSoc: Sequelize.STRING
-
+///////////////////////////////////////////////////////////////////////////////////////////////////
 }
+
 /*
+
 cliente.init({
   CodCli: {type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
   Nome: Sequelize.STRING,
@@ -43,8 +46,6 @@ cliente.init({
   Email: Sequelize.STRING,
   LinhaGes: Sequelize.INTEGER,
   RazSoc: Sequelize.STRING
-
-  
 }),
 */
 
