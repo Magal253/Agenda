@@ -27,19 +27,31 @@ router.post('/', function(req, res, next) {
 
   var clienteM = require('../modelos/cliente');
 
-  var cliente = connection1.define('cliente', {
-    user: clienteM.usuario,
-    senha: clienteM.senha,
-    email: clienteM.email
+  var clienteDoProj = connection1.define('clienteDoProj', {
+    Nome: clienteM.Nome,
+    InfoId: clienteM.InfoID,
+    Desc: clienteM.Desc,
+    Metas: clienteM.Metas,
+    Gastos: clienteM.Gastos,
+    DataNasc: clienteM.DataNasc,
+    Email: clienteM.Email,
+    LinhaGes: clienteM.LinhaGes,
+    RazSoc: clienteM.RazSoc
 
 });
 
   console.log('Usuario: '+ req.body.username +'\nSenha: '+ req.body.key +'\nEmail: '+ req.body.email+'/');
   connection1.sync().then(function(){
-    cliente.create({
-      user: req.body.username,
-      senha: req.body.key,
-      email: req.body.email
+    clienteDoProj.create({
+    Nome: req.body.Nome,
+    InfoId: req.body.InfoId,
+    Desc: req.body.Desc,
+    Metas: req.body.Metas,
+    Gastos: req.body.Gastos,
+    DataNasc: req.body.DataNasc,
+    Email: req.body.Email,
+    LinhaGes: req.body.LinhaGes,
+    RazSoc: req.body.RazSoc
     });
   }).then(  console.log('////////////////////////////////////////////////////////////////// \n' +typeof cliente.user+'\n///////////////////////////////////////////////////'));
 

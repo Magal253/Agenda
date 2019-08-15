@@ -37,9 +37,15 @@ $(document).ready(function(){
             $("#mensagemCreate").show();
         }else{
             var newAcc = {
-                username: $("#createUser").val(), 
-                key: $("#createPassword").val(), 
-                email: $("#email").val()
+                Nome: $("#createNome").val(), 
+                InfoId: $("#createInfoId").val(), 
+                Desc: $("#create").val(),
+                Metas: $("#create").val(),
+                Gastos: $("#create").val(),
+                DataNasc: $("#create").val(),
+                Email: $("#create").val(),
+                LinhaGes: $("#create").val(),
+                RazSoc: $("#create").val()
             };
             $.post("http://localhost:3000/users", newAcc)  //enviar o post para o Localhost porta 3000 e disso enviar para o users
                 .done(function(data) {

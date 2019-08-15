@@ -16,6 +16,9 @@
 
 <body>
   <form class="form-signin">
+    <div class="alert alert-secondary" role="alert">
+       Programa focado ao uso de testes
+    </div>
     <h3>Faça o seu acesso</h3>
     <div id="accSuccess" class="alert alert-success" role="alert">
       Conta criada com sucesso.
@@ -32,7 +35,7 @@
     <br>
     <button type="submit" class="btn btn-lg btn-primary btn-block" id="access">Acessar</button>
     <button type="button" class="btn btn-lg btn-secondary btn-block" id="novoUsu" data-toggle="modal" 
-    data-target="#newUser">Novo Usuario</button>
+    data-target="#newClient">Novo Usuario</button>
   </form><!--
  Code injected by live-server 
 <script type="text/javascript">
@@ -74,7 +77,69 @@
 </script>--></body>
 </html>
 
+
+<div class="modal fade" id="newClient" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Faça seu cadastro</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <label>Informe o Nome do Cliente:</label>
+          <br>
+          <input type="text" id="createNome" placeholder="Usuario">
+          <br>
+          <label>Informe sua informe o CNPJ ou CPF:</label>
+          <br>
+          <input type="text" id="createInfoId" placeholder="Senha">
+          <br>
+          <label>Informeos algo extra :</label>
+          <br>
+          <input type="text" id="createDesc" placeholder="Descrição">
+          <br>
+          <label>Digite o quanto foi combinado de Meta:</label>
+          <br>
+          <input type="text" id="createMetas" placeholder="Metas">
+          <br>
+          <label>Digite o Gasto Total do Cliente:</label>
+          <br>
+          <input type="text" id="createGastos" placeholder="valor">
+          <br>
+          <label>Digite a data de Nascimento do Cliente:</label>
+          <br>
+          <input type="text" id="createData" placeholder="YYYY-MM-DD">
+          <br>
+          <label>Digite o email do Cliente:</label>
+          <br>
+          <input type="email" id="createEmail" placeholder="Email">
+          <br>
+          <label>Digite a Linha Gestora do Cliente:</label>
+          <br>
+          <input type="text" id="createLinhaGes" placeholder="Linha Gestora">
+          <br>
+          <label>Digite a Razão Social do Cliente:</label>
+          <br>
+          <input type="text" id="createRazSoc" placeholder="Razão Social">
+          <br>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-primary" id="createAcc">Criar Conta</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--//////////////////////////////////////////////////////////////////////////////////////////////////////-->
 <!-- Modal -->
+<!--
 <div class="modal fade" id="newUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -118,8 +183,12 @@
     </div>
   </div>
 </div>
+-->
+<!--//////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
+<!--//////////////////////////////////////////////////////////////////////////////////////////////////////-->
 <!-- Modal -->
+<!--
 <div class="modal fade" id="forgotPass" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -157,71 +226,5 @@
     </div>
   </div>
 </div>
-
-
-<!--
-<div class="modal fade" id="attConta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Reset de password</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <label>Informe a nova senha:</label>
-          <br>
-          <input type="password" id="createPass" placeholder="Senha">
-          <br>
-          <label>Confirme a nova senha:</label>
-          <br>
-          <input type="password" id="confirmPass" placeholder="Confirmar Senha">
-          <br>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal"
-          >Atualizar Conta</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
 -->
-
-<!--
-!-- Modal --
-<div class="modal fade" id="accessCode" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Reset de password</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <label>Informe o codigo de acesso:</label>
-          <br>
-          <input type="password" id="createPassword" placeholder="Codigo de acesso">
-          <br>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal"
-          data-target="#attConta">Avançar</button>
-      </div>
-    </div>
-  </div>
-</div>
--->
-<!-- Modal -->
+<!--//////////////////////////////////////////////////////////////////////////////////////////////////////-->
