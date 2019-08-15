@@ -65,7 +65,36 @@ $(document).ready(function(){
         }
     });
 
+    $("#createConta").click(function(){
+        $("#userExist").hide();
+        if($("#createPassword").val()!=$("#confirmPassword").val()){
+            $("#mensagemCreate").show();
+        }else{
+            var newConta = {
+                Nome: $("#consultaNome").val(), 
+                ContaNome: $("#createConNome").val(), 
+                ContaVal: $("#createConVal").val()
+            };
+            $.post("http://localhost:3000/users/Conta", newConta)  //enviar o post para o Localhost porta 3000 e disso enviar para o users
+                .done(function(data) {
+                    /*if(data == 'X'){
+                        $("#userExist").show();
+                    }else{*/
+                    $('#newClient').modal('hide');
+                    $("#accSuccess").show();
+                    //console.log(newAcc);
+                    //}
+                })
+                .fail(function(data) {
+                    
+                    console.log(". . .ERROR. . . "+JSON.stringify(data));
+                });
+            
+        }
+    });
+
     // função de esqueci a senha
+    /*
     $("#forgotAcc").click(function(){
         if($("#createPass").val()!=$("#confirmPass").val()){
             $("#mensagemCreate2").show();
@@ -100,7 +129,7 @@ $(document).ready(function(){
 
 
 
-
+*/
 
 
 

@@ -23,9 +23,7 @@
     <div id="accSuccess" class="alert alert-success" role="alert">
       Conta criada com sucesso.
     </div>
-    <div id="mensagem" class="alert alert-danger" role="alert">
-      Usuario e senha invalidos.
-    </div>
+    
     
     <label for="inputUser" class="sr-only">Informe o Usuario</label>
     <input type="text" id="inputUser" class="form-control" placeholder="Usuario" autofocus>
@@ -154,43 +152,21 @@
         <form>
           <label>Informe o Nome do Cliente:</label>
           <br>
-          <input type="text" id="createNome" placeholder="Usuario">
+          <div id="mensagem" class="alert alert-danger" role="alert">
+            Usuario não não encontrado.
+          </div>
+          <input type="text" id="consultaNome" placeholder="Usuario">
           <br>
-          <label>Informe sua informe o CNPJ ou CPF:</label>
+          <label>Informe de que é a Conta:</label>
           <br>
-          <input type="text" id="createInfoId" placeholder="Senha">
+          <input type="text" id="createConNome" placeholder="Senha">
           <br>
-          <label>Informeos algo extra :</label>
+          <label>Informeos o Valor da Conta:</label>
           <br>
-          <input type="text" id="createDesc" placeholder="Descrição">
-          <br>
-          <label>Digite o quanto foi combinado de Meta:</label>
-          <br>
-          <input type="text" id="createMetas" placeholder="Metas">
-          <br>
-          <label>Digite o Gasto Total do Cliente:</label>
-          <br>
-          <input type="text" id="createGastos" placeholder="valor">
-          <br>
-          <label>Digite a data de Nascimento do Cliente:</label>
-          <br>
-          <input type="text" id="createData" placeholder="YYYY-MM-DD">
-          <br>
-          <label>Digite o email do Cliente:</label>
-          <br>
-          <input type="text" id="createEmail" placeholder="Email">
-          <br>
-          <label>Digite a Linha Gestora do Cliente:</label>
-          <br>
-          <input type="text" id="createLinhaGes" placeholder="Linha Gestora">
-          <br>
-          <label>Digite a Razão Social do Cliente:</label>
-          <br>
-          <input type="text" id="createRazSoc" placeholder="Razão Social">
-          <br>
+          <input type="text" id="createConVal" placeholder="Descrição">
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-            <button type="button" class="btn btn-primary" id="createAcc">Criar Conta</button>
+            <button type="button" class="btn btn-primary" id="createConta">Criar Conta</button>
           </div>
         </form>
       </div>

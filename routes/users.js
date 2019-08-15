@@ -62,6 +62,45 @@ router.post('/', function(req, res, next) {
 });
 
 
+
+router.post('/Conta', function(req, res, next) {
+  //////////////////////////////////////////////////////////////////////
+  console.log('mais 1');
+  var connection1 = new Sequelize('user', 'root', 'masterkey',{
+    host:'localhost',
+    dialect: 'mysql'
+    });
+  ///////////////////////////////////////////////////////////////////////
+  console.log('coisa de');
+  
+  let nomeDoCliente = req.body.Nome;
+
+
+  var clienteM = require('../modelos/cliente');
+  console.log('cada vez !');
+
+  var clienteDoProj = connection1.define('clienteDoProj', {
+    Nome: clienteM.Nome,
+    InfoId: clienteM.InfoId,
+    Desc: clienteM.Desc
+  });
+
+  console.log('Usuario: '+ req.body.Nome +'\nConta de: '+ req.body.ConNome +'\nNo Valor de: '+ req.body.ConVal+'/');
+  connection1.sync().then(function(){
+    clienteDoProj.create({
+    Nome: req.body.Nome,
+    InfoId: req.body.InfoId,///////////////////////////////////////parei aqui
+    Desc: req.body.Desc
+    });
+  }).then(console.log('Criação Da Conta Concluida!'));
+
+  res.send('V');
+
+/////////////////////////////////////////////////////////////////////////////
+});
+
+
+
 router.post('/attSenha', function(req, res, next) {
   var users = require('../modelos/users');
   console.log(users);
