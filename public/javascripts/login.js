@@ -42,20 +42,20 @@ $(document).ready(function(){
                 Desc: $("#createDesc").val(),
                 Metas: $("#createMetas").val(),
                 Gastos: $("#createGastos").val(),
-                DataNasc: $("#createDataNasc").val(),
+                DataNasc: $("#createData").val(),
                 Email: $("#createEmail").val(),
                 LinhaGes: $("#createLinhaGes").val(),
                 RazSoc: $("#createRazSoc").val()
             };
             $.post("http://localhost:3000/users", newAcc)  //enviar o post para o Localhost porta 3000 e disso enviar para o users
                 .done(function(data) {
-                    if(data == 'X'){
+                    /*if(data == 'X'){
                         $("#userExist").show();
-                    }else{
+                    }else{*/
                     $('#newUser').modal('hide');
                     $("#accSuccess").show();
                     //console.log(newAcc);
-                    }
+                    //}
                 })
                 .fail(function(data) {
                     

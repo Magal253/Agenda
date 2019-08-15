@@ -41,7 +41,7 @@ router.post('/', function(req, res, next) {
     RazSoc: clienteM.RazSoc
   });
 
-  console.log('Usuario: '+ req.body.Nome +'\nID: '+ req.body.InfoId +'\nEmail: '+ req.body.Email+'/');
+  console.log('Usuario: '+ req.body.Nome +'\nID: '+ req.body.InfoId +'\nEmail: '+ req.body.Email+'\n Data MALDITA: '+ req.body.DataNasc +'/');
   connection1.sync().then(function(){
     clienteDoProj.create({
     Nome: req.body.Nome,
@@ -54,7 +54,7 @@ router.post('/', function(req, res, next) {
     LinhaGes: req.body.LinhaGes,
     RazSoc: req.body.RazSoc
     });
-  }).then(  console.log('////////////////////////////////////////////////////////////////// \n' +typeof cliente.user+'\n///////////////////////////////////////////////////'));
+  }).then(  console.log('Criação Concluida!'));
 
   res.send('V');
 
