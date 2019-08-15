@@ -18,18 +18,20 @@ router.get('/', function(req, res, next) {
 //////////////////////////////////////////////////////////////////////
 router.post('/', function(req, res, next) {
   //////////////////////////////////////////////////////////////////////
-
+  console.log('1 coisa');
   var connection1 = new Sequelize('user', 'root', 'masterkey',{
     host:'localhost',
     dialect: 'mysql'
     });;
   ///////////////////////////////////////////////////////////////////////
-
+  console.log('de cada');
+  
   var clienteM = require('../modelos/cliente');
+  console.log('vez !');
 
   var clienteDoProj = connection1.define('clienteDoProj', {
     Nome: clienteM.Nome,
-    InfoId: clienteM.InfoID,
+    InfoId: clienteM.InfoId,
     Desc: clienteM.Desc,
     Metas: clienteM.Metas,
     Gastos: clienteM.Gastos,
@@ -37,10 +39,9 @@ router.post('/', function(req, res, next) {
     Email: clienteM.Email,
     LinhaGes: clienteM.LinhaGes,
     RazSoc: clienteM.RazSoc
+  });
 
-});
-
-  console.log('Usuario: '+ req.body.username +'\nSenha: '+ req.body.key +'\nEmail: '+ req.body.email+'/');
+  console.log('Usuario: '+ req.body.Nome +'\nID: '+ req.body.InfoId +'\nEmail: '+ req.body.Email+'/');
   connection1.sync().then(function(){
     clienteDoProj.create({
     Nome: req.body.Nome,
