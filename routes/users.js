@@ -58,31 +58,31 @@ router.post('/', function(req, res, next) {
 
   res.send('V');
 
-/////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
 });
 
 
 
 router.post('/Conta', function(req, res, next) {
-  //////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
   console.log('mais 1');
   var connection1 = new Sequelize('user', 'root', 'masterkey',{
     host:'localhost',
     dialect: 'mysql'
     });
-  ///////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
   console.log('coisa de');
   
   let nomeDoCliente = req.body.Nome;
 
 
-  var clienteM = require('../modelos/cliente');
+  var contaM = require('../modelos/cliente');
   console.log('cada vez !');
 
   var clienteDoProj = connection1.define('clienteDoProj', {
-    Nome: clienteM.Nome,
-    InfoId: clienteM.InfoId,
-    Desc: clienteM.Desc
+    Nome: contaM.Nome,
+    ContaNome: contaM.ContaNome,
+    ContaVal: contaM.ContaVal
   });
 
   console.log('Usuario: '+ req.body.Nome +'\nConta de: '+ req.body.ConNome +'\nNo Valor de: '+ req.body.ConVal+'/');
