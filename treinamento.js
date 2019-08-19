@@ -56,13 +56,14 @@ fluffy.save(function (err, fluffy) {
 
 function makeName() {
     var usu = '';
-    var gambi = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    var gambi2= 'abcdefghijklmnopqrstuvwxyz'
+    var gambi = 'BCDFGHJKLMNPQRSTVWXYZ';
+    var gambi2= 'AEIOU'
     var gambiTam = gambi.length;
     var gambiTam2= gambi2.length;
-    usu += gambi.charAt(Math.floor(Math.random() * gambiTam));
-    for ( var i = 0; i < 7; i++ ) {
-       usu += gambi.charAt(Math.floor(Math.random() * gambiTam2));
+    //usu += gambi.charAt(Math.floor(Math.random() * gambiTam));
+    for ( var i = 0; i < Math.ceil(Math.random() * 4); i++ ) {
+       usu += gambi.charAt(Math.floor(Math.random() * gambiTam));
+       usu += gambi2.charAt(Math.floor(Math.random() * gambiTam2));
     }
 
 
