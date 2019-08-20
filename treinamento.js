@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/show', {useNewUrlParser: true});
 
 
 var db = mongoose.connection;
@@ -8,53 +8,49 @@ db.once('open', function() {
     console.log('BD is connected');
 });
 
-var kittySchema = new mongoose.Schema({
+var algumSchema = new mongoose.Schema({
     name: String,
-    age: Number
+    age: Number,
+    dirige: false
 });
 
-kittySchema.methods.speak = function () {
-    var greeting = this.name
-      ? "Meow name is " + this.name
-      : "I don't have a name";
-    console.log(greeting);
+algumSchema.methods.nome = function () {
+    
+    console.log('Nome: ' + this.name);
   }
 
-var Kitten = mongoose.model('Kitten', kittySchema);
-/*
-var silence = new Kitten({ name: 'Silence' });
-console.log(silence.name); // 'Silence'
-*/
-//for(var x = 0; x < 10;x++){
-//function criar(){
-    kittySchema.methods.speak = function () {
-        var greeting = this.name
-          ? "Meow name is " + this.name
-          : "I don't have a name";
+var cidadao = mongoose.model('cidadao', algumSchema);
+
+    algumSchema.methods.nome = function () {
+        var greeting =("Nome: " + this.name);
         console.log(greeting);
       }
     
-    var fluffy = new Kitten({ name: makeName(),  age: randNumber()});
-    console.log('Name: '+fluffy.name+'\tage: '+fluffy.age);
+    var alguem = new cidadao({ name: makeName(),  age: randNumber()});
+    console.log('Name: '+alguem.name+'\tage: '+alguem.age+'\tDirige: '+alguem.dirige);
     
-    fluffy.speak();
-//}
+    alguem.nome();
 
+//algumSchema.add({Motorista: trueORfalse()});
 
-fluffy.save(function (err, fluffy) {
+alguem.save(function (err, alguem) {
     if (err) return console.error(err);
-    fluffy.speak();
+    alguem.nome();
   });
 
-  Kitten.find(function (err, kittens) {
+  cidadao.find(function (err, cidadao) {
     if (err) return console.error(err);
-    console.log(kittens);
+    console.log(cidadao);
   })
 
   ///Kitten.find({ name: /^fluff/ }, callback);
-
-
-
+/*
+function trueORfalse(){
+  var numero = Math.floor(Math.random() * 1);
+  if(numero == 0) return false;
+  else return true;
+}
+*/
 function makeName() {
     var usu = '';
     var gambi = 'BCDFGHJKLMNPQRSTVWXYZ';
