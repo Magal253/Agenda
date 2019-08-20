@@ -35,8 +35,9 @@ console.log(silence.name); // 'Silence'
       }
     
     var fluffy = new Kitten({ name: makeName(),  age: randNumber()});
+    console.log('Name: '+fluffy.name+'\tage: '+fluffy.age);
     
-    fluffy.speak();   
+    fluffy.speak();
 //}
 
 
