@@ -19,18 +19,18 @@ function Famicon(fam){
   }
   return fam;
 }
-
+///////////////////////usuario////////////////
 var algumSchema = new mongoose.Schema({
   name: Schema.Types.Mixed,
   age: Number,
   dirige: Boolean,
   familia: Familia
 });
-
-algumSchema.methods.nome = function () {
+//////////////////end usuario//////////////////////
+//algumSchema.methods.nome = function () {
     
-    console.log('Nome: ' + this.name);
-  }
+  //  console.log('Nome: ' + this.name);
+  //}
 
 var cidadao = mongoose.model('cidadao', algumSchema);
 
