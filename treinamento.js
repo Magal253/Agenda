@@ -21,7 +21,7 @@ function Famicon(fam){
 }
 
 var algumSchema = new mongoose.Schema({
-  name: String,
+  name: Schema.Types.Mixed,
   age: Number,
   dirige: Boolean,
   familia: Familia
