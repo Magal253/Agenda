@@ -8,7 +8,7 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
     console.log('BD is connected');
 });
-
+///////////////////////////////////////suport of the user/////////////////////////
 var Familia = [];
 
 function Famicon(fam){
@@ -19,19 +19,20 @@ function Famicon(fam){
   }
   return fam;
 }
-///////////////////////usuario////////////////
+///////////////////////////////////end of suport of user ////////////////////
+///////////////////////usuario//////////////////////////////////////////////
 var algumSchema = new mongoose.Schema({
   name: Schema.Types.Mixed,
   age: Number,
   dirige: Boolean,
   familia: Familia
 });
-//////////////////end usuario//////////////////////
+//////////////////end usuario//////////////////////////////////////////////
 //algumSchema.methods.nome = function () {
     
   //  console.log('Nome: ' + this.name);
   //}
-
+/////////////////////////set the user///////////////////////////////////////
 var cidadao = mongoose.model('cidadao', algumSchema);
 
     algumSchema.methods.nome = function () {
@@ -42,12 +43,13 @@ var cidadao = mongoose.model('cidadao', algumSchema);
       Familia = Famicon(Familia);
     
     var alguem = new cidadao({ name: makeName(),  age: randNumber(), dirige: trueORfalse(), familia: Familia});
+
     console.log('Name: '+alguem.name+'\tage: '+alguem.age+'\tDirige: '+alguem.dirige);
     
     alguem.nome();
-
+///////////////////////////end set the user/////////////////////////////////
 //algumSchema.add({Motorista: trueORfalse()});
-
+/////////////////////integração/////////////////////////////////////////////
 alguem.save(function (err, alguem) {
     if (err) return console.error(err);
     alguem.nome();
@@ -57,9 +59,9 @@ alguem.save(function (err, alguem) {
     if (err) return console.error(err);
     console.log(cidadao);
   })
-
-  ///Kitten.find({ name: /^fluff/ }, callback);
-
+///////////////////end integração////////////////////////////////////////////////
+//Kitten.find({ name: /^fluff/ }, callback);
+//////////////////////////////////////////rand insert/////////////////////////
 function trueORfalse(){
   var numero = Math.floor(Math.random() * 1);
   if(numero == 0) return false;
@@ -89,7 +91,7 @@ function randNumber(){
     //var lista = [codigo,numero];
     return numero;
 }
-
+////////////////////////////////////////////end rand insert///////////////////////////////////
 
 
 
