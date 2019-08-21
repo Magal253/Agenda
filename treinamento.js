@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/show', {useNewUrlParser: true});
+const faker = require('faker');
+mongoose.connect('mongodb://localhost/trabalhoDMongo', {useNewUrlParser: true});
 
 
 var db = mongoose.connection;
@@ -8,10 +9,22 @@ db.once('open', function() {
     console.log('BD is connected');
 });
 
+var Familia = [];
+
+function Famicon(fam){
+ //var fam = [];
+  for(var x = 0; x < 3/*Math.ceil(Math.random() * 5)*/; x++){
+    fam.push(faker.name.findName());
+
+  }
+  return fam;
+}
+
 var algumSchema = new mongoose.Schema({
-    name: String,
-    age: Number,
-    dirige: false
+  name: String,
+  age: Number,
+  dirige: Boolean,
+  familia: Familia
 });
 
 algumSchema.methods.nome = function () {
@@ -25,8 +38,10 @@ var cidadao = mongoose.model('cidadao', algumSchema);
         var greeting =("Nome: " + this.name);
         console.log(greeting);
       }
+      
+      Familia = Famicon(Familia);
     
-    var alguem = new cidadao({ name: makeName(),  age: randNumber()});
+    var alguem = new cidadao({ name: makeName(),  age: randNumber(), dirige: trueORfalse(), familia: Familia});
     console.log('Name: '+alguem.name+'\tage: '+alguem.age+'\tDirige: '+alguem.dirige);
     
     alguem.nome();
@@ -44,13 +59,13 @@ alguem.save(function (err, alguem) {
   })
 
   ///Kitten.find({ name: /^fluff/ }, callback);
-/*
+
 function trueORfalse(){
   var numero = Math.floor(Math.random() * 1);
   if(numero == 0) return false;
   else return true;
 }
-*/
+
 function makeName() {
     var usu = '';
     var gambi = 'BCDFGHJKLMNPQRSTVWXYZ';
@@ -74,19 +89,6 @@ function randNumber(){
     //var lista = [codigo,numero];
     return numero;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
